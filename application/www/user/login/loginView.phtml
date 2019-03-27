@@ -1,0 +1,41 @@
+<?php 
+ if(!$user->verifysession()){
+        ?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Login</title>
+</head>
+<body class="loginbody">
+	<span class="error"><?= $login ?></span>
+	<div style="display: flex;max-width: 821px;margin: 0 auto;position: relative;top: 48px;">
+  	  		<form action="login" method="post">
+  	  			<div style="position: relative;top: 9%;left: -14px;">
+  	  			<fieldset>
+  	           <legend style="text-align:center;font-size:35px;color: white;">Login</legend>
+  	  			<label>votre email:</label>
+	  	  		<input type="text" name="email" placeholder="email" style="padding: 15px;">
+	  	  		<label>voter mode passe:</label>
+	            <input type="password" name="password" placeholder="password" style="padding: 15px;">
+	  	  		<input type="submit" value="Entrez" class="form_submit">
+  	  			</div>
+	  	    </form>
+  	</fieldset>
+  	<div class="lorem">
+       <p style="font-size: 15px;text-align: center;position: relative;top: 19%;width: 77%;margin: 0 auto;">
+       	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       </p>
+       <a href="<?= $requestUrl; ?>/user/inscription" class="connexion">Inscription</a>
+    </div>
+</div>
+
+</body>
+</html>
+<?php }else{  header('location:/project rest/index.php');?>
+
+	    <?php } ?>

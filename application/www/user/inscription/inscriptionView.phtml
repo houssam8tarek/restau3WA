@@ -1,0 +1,51 @@
+
+<?php 
+ if(!$user->verifysession()){
+        ?>
+<!DOCTYPE html>
+<html class="html_user">
+<head>
+	<title>inscription</title>
+</head>
+<body>
+	<span style="position: relative;left: 20%;color: green;"><?= $message;?></span>
+	<div style="display: flex;max-width: 821px;margin: 0 auto;position: relative;top: 48px;">
+<form action="inscription" method="post">
+	<fieldset>
+  	    <legend style="text-align:center;font-size:30px;color:white;">Inscription</legend>
+  	  		<div>
+			<label>Entrez name:</label>
+			<input type="text" name="name" id="name" placeholder="usrname" value>
+			<label>Entrez email:</label>
+			<input type="email" name="email" id="email" placeholder="email" value>
+			<label>Entrez password:</label>
+			<input type="password" name="password" id="password" placeholder="password">
+			<label>Entrez phone:</label>
+			<input type="text" name="phone" id="phone" placeholder="phone" value>
+			<label>Entrez date:</label>
+			<input type="date" name="date" id="date"value>
+			<input type="submit" value="inscription" class="form_submit">
+            </div>
+  	    </fieldset>
+    </form>
+    <div class="lorem">
+       <p style="font-size: 15px;text-align: center;position: relative;top: 19%;width: 77%;margin: 0 auto;">
+       	Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+       cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+       proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+       </p>
+       <a href="<?= $requestUrl; ?>/user/login" class="connexion">connexion</a>
+    </div>
+	</div>
+	
+    <!-- <div class="background_form">
+    	<img src="<?= $wwwUrl ?>/images/nvimg/background_div.jpg">
+    </div> -->
+</body>
+</html>
+<?php }else{   header("location:/project rest/index.php");?>
+
+	    <?php } ?>

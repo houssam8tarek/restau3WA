@@ -1,0 +1,52 @@
+<?php 
+
+    if(!$user->verifysession()){
+        ?>
+     <table class="generic-table meal-list">
+    <caption style="padding: 0; padding-top: 0;text-align: center;caption-side:top;">Carte du restaurant</caption>
+    <tbody>
+        <?php foreach($tr as $meals) :?>
+            <tr>
+                <td>
+                    <img src="<?=$wwwUrl;?>/images/meals/<?=$meals['photo'];?>">
+                </td>
+                <td>
+                    <?=$meals['name'];?>
+                </td>
+                <td>
+                    <?=$meals['description'];?>
+                </td>
+                <td>
+                    <?=$meals['saleprice']." Dhs";?> 
+                </td>
+            </tr>
+            <?php endforeach; ?>
+    </tbody>
+</table>
+<!-- Code HTML à écrire -->
+<?php } else{ ?>
+     <table class="generic-table meal-list">
+    <caption style="padding: 0; padding-top: 0;text-align: center;caption-side: top;">Carte du restaurant</caption>
+    <tbody>
+        <?php foreach($tr as $meals) :?>
+            <tr>
+                <td>
+                    <img src="<?=$wwwUrl;?>/images/meals/<?=$meals['photo'];?>">
+                </td>
+                <td>
+                    <?=$meals['name'];?>
+                </td>
+                <td>
+                    <?=$meals['description'];?>
+                </td>
+                <td>
+                    <?=$meals['saleprice']." Dhs";?> 
+                </td>
+                <td>
+                    <a href="<?=$requestUrl;?>/orders?id=<?=$meals['id'];?>">orders</a>
+                </td>
+            </tr>
+        <?php endforeach; ?>
+    </tbody>
+</table>
+    <?php } ?>

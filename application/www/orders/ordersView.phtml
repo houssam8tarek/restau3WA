@@ -1,0 +1,29 @@
+
+<form action="<?= $requestUrl;?>/orders?id=<?= $meals['id'];?>" method="post" >
+            <input type="hidden" id="id" name="id" value="<?= $meals['id'];?>">
+            <input type="hidden" id="price" name="price" value="<?= $meals['saleprice'];?>">
+    <table class="generic-table meal-list">
+    <caption style="padding: 0; padding-top: 0;text-align: center;caption-side:top;">commend</caption>
+    <tbody>
+            <tr>
+                <td>
+                    <img src="<?=$wwwUrl;?>/images/meals/<?=$meals['photo'];?>">
+                </td>
+                <td>
+                    <?=$meals['name'];?>
+                </td>
+                <td>
+                    <?=$meals['description'];?>
+                </td>
+                <td>
+                    <?=$meals['saleprice']." Dhs";?>
+                </td>
+                <td class="quan">
+                    <input type="text" name="quantity" id="quantite" class="qantite" placeholder="Quantity">
+                </td>
+            </tr>
+    </tbody>
+</table>
+  <input type="submit" name="button button-primary" style="padding:7px;border: 0;background-color: #b5966a;color: white; float:right; margin-right: 7%;margin-top: 10px;">
+
+</form>

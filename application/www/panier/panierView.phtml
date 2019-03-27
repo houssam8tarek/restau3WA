@@ -1,0 +1,31 @@
+<table class="table" style="max-width: 1120px;margin: 0 auto;
+">
+  <thead>
+    <tr>
+      
+      <th scope="col" style="border-width: 4px;">image</th>
+      <th scope="col" style="border-width: 4px;">name</th>
+      <th scope="col" style="border-width: 4px;">description</th>
+      <th scope="col" style="border-width: 4px;">quantity</th>
+      <th scope="col" style="border-width: 4px;">Total</th>
+    </tr>
+  </thead>
+  <tbody>
+  	 <?php foreach($paniers as $panier): ?>
+    <tr>
+      <td><img src="<?=$wwwUrl;?>/images/meals/<?=$panier['photo'];?>" style="width: 45%;"></td>
+      <td><?= $panier["name"];?></td>
+      <td><?= $panier["description"];?></td>
+      <td><?= $panier["qte"];?></td>
+      <td><?= $panier["total"];?></td>
+      <td style="border:0;"><form action="<?= $requestUrl; ?>/panier" method="post">
+        <input type="hidden" name="id" value="<?= $panier['id']; ?>">
+        <button type="submit" style="background: none;border: 0;"><i class="fas fa-times" style="color:red;"></i></button>
+      </form><a href=""></a></td>
+    </tr>
+     <?php endforeach; ?>
+  </tbody>
+</table>
+
+
+
